@@ -1,5 +1,12 @@
 # 8Hats plugins
 
+> ⚠️ **This repository has moved to [`8hats/marketplace`](https://github.com/8hats/marketplace).**
+> Install from there: `/plugin marketplace add 8hats/marketplace`. Do **not** run
+> `add 8hats/plugins` — on a machine with the internal team marketplace registered,
+> that exact command silently retargets its registration (slug/name collision in
+> Claude Code, verified on 2.1.228). This copy stays only until archived and
+> receives no further updates.
+
 Public plugin marketplace for 8Hats / Agent University — agent identity and
 continuity tooling.
 
