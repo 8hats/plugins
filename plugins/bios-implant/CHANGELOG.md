@@ -2,6 +2,23 @@
 
 All notable changes to BIOS Implant are documented in this file.
 
+## 1.0.21 - 2026-08-19
+
+The public marketplace moved to `8hats/marketplace`; this repository is retired and about to be
+archived. A machine that installed from `8hats/plugins` keeps fetching this copy, so this release
+is the last thing it will ever receive — and it exists only to say so.
+
+- New `SessionStart` hook `scripts/old-marketplace-notice.mjs`: if the local registry (or
+  `extraKnownMarketplaces`) still carries a marketplace sourced at `8hats/plugins`, it asks the
+  owner to re-add from `8hats/marketplace` and reinstall the plugin. It reads two files, writes
+  nothing, always exits 0, and goes silent by itself once the machine has migrated
+- The hook recognises the hijack case separately: when the affected key is `8hats-plugins` — the
+  internal team marketplace's own name, which `add 8hats/plugins` retargets in place — it tells
+  the owner to restore `8hats/8hats-plugins` and explicitly NOT to remove the entry, because
+  removing it uninstalls every team plugin that came from it
+- The marketplace and plugin descriptions, and the plugin's display name, now carry the move in
+  plain sight for anyone who opens the plugin browser
+
 ## 1.0.20 - 2026-08-11
 
 Everything here traces to the MEOW-20 onboarding transcript (2026-08-11).
