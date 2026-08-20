@@ -1,5 +1,5 @@
 {
-  "description": "BIOS Implant session-start boot instruction. The hook performs no network access and writes no state.",
+  "description": "BIOS Implant session-start boot instruction, plus a read-only notice when this machine still uses the retired 8hats/plugins marketplace. Neither hook performs network access or writes state.",
   "hooks": {
     "SessionStart": [
       {
@@ -8,6 +8,11 @@
           {
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/boot-protocol.mjs\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/old-marketplace-notice.mjs\"",
             "timeout": 5
           }
         ]
